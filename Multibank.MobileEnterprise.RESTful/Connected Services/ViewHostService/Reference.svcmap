@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e61f52c7-456a-41d8-b454-331606af5600" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\Efrain Pardo\Documents\Visual Studio 2017\Projects\WSDL\WSDLAutorizador\ViewHostService\ViewHostService_1.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ViewHostService_1.xsd" MetadataType="Schema" ID="98a58f63-fbf6-43b1-a67c-5666377a313e" SourceId="1" SourceUrl="file:///C:/Users/Efrain Pardo/Documents/Visual Studio 2017/Projects/WSDL/WSDLAutorizador/ViewHostService/ViewHostService_1.xsd" />
+    <MetadataFile FileName="ViewHostService_1_2_3.xsd" MetadataType="Schema" ID="8d5d0432-d014-4074-8d35-3118717f1455" SourceId="1" SourceUrl="file:///C:/Users/Efrain Pardo/Documents/Visual Studio 2017/Projects/WSDL/WSDLAutorizador/ViewHostService/ViewHostService_1_2_3.xsd" />
+    <MetadataFile FileName="ViewHostService.xsd" MetadataType="Schema" ID="fcd5f163-6d9b-44fd-8da7-a4b6cf2d1f8c" SourceId="1" SourceUrl="file:///C:/Users/Efrain Pardo/Documents/Visual Studio 2017/Projects/WSDL/WSDLAutorizador/ViewHostService/ViewHostService.xsd" />
+    <MetadataFile FileName="ViewHostService.wsdl" MetadataType="Wsdl" ID="8c65a6bb-bafc-4aab-9257-8516dc245329" SourceId="1" SourceUrl="file:///C:/Users/Efrain Pardo/Documents/Visual Studio 2017/Projects/WSDL/WSDLAutorizador/ViewHostService/ViewHostService_1.wsdl" />
+    <MetadataFile FileName="ViewHostService_1_2_3_4.xsd" MetadataType="Schema" ID="d3516a99-f14a-44e2-8ccf-6cb1d3f1218f" SourceId="1" SourceUrl="file:///C:/Users/Efrain Pardo/Documents/Visual Studio 2017/Projects/WSDL/WSDLAutorizador/ViewHostService/ViewHostService_1_2_3_4.xsd" />
+    <MetadataFile FileName="ViewHostService_1_2.xsd" MetadataType="Schema" ID="f565e883-6df5-4fc8-8d90-4f2a24f47731" SourceId="1" SourceUrl="file:///C:/Users/Efrain Pardo/Documents/Visual Studio 2017/Projects/WSDL/WSDLAutorizador/ViewHostService/ViewHostService_1_2.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

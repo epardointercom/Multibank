@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SiteHostService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="SiteHostService.xsd" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="SiteHostService_1_2_3_4.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="SiteHostService_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" />
+      <xsd:import schemaLocation="SiteHostService_1_2.xsd" namespace="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" />
+      <xsd:import schemaLocation="SiteHostService_1_2_3.xsd" namespace="http://schemas.datacontract.org/2004/07/Repository.Pattern.Infrastructure" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISiteService_AddAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAction" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLog" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSite" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddSiteSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSiteSetting" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddSiteSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSiteSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOperation" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddOperationGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOperationGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddOperationGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOperationGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddOperationType_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOperationType" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddOperationType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOperationTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAction" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetActions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActions" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetActions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetCurrentSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentSite" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetCurrentSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperation" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperations" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperationGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperationGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperationGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationGroups" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperationGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperationType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationType" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperationType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperationTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationTypes" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperationTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSetting" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSettings" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSiteSettingValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteSettingValue" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSiteSettingValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteSettingValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSites_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSites" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAllSites_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSites" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAllSites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSiteByUrl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteByUrl" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSiteByUrl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteByUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_RemoveAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAction" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_RemoveAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_RemoveSiteSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSiteSetting" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_RemoveSiteSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSiteSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_RemoveOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveOperation" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_RemoveOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_RemoveOperationGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveOperationGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_RemoveOperationGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveOperationGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_RemoveOperationType_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveOperationType" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_RemoveOperationType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveOperationTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SaveAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAction" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SaveAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SaveSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSetting" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SaveSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SaveSettingValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSettingValue" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SaveSettingValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSettingValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SaveOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOperation" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SaveOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SaveOperationGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOperationGroup" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SaveOperationGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOperationGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SaveOperationType_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOperationType" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SaveOperationType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOperationTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SaveSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSite" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SaveSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSite" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAllOperationGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOperationGroups" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAllOperationGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOperationGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperationGroupForEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationGroupForEdit" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperationGroupForEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationGroupForEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAllOperationTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOperationTypes" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAllOperationTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOperationTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAllOperations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOperations" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAllOperations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOperationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperationForEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationForEdit" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetOperationForEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationForEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSettingForId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSettingForId" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSettingForId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSettingForIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddLogReturnId_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLogReturnId" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_AddLogReturnId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLogReturnIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAllOffices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOffices" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAllOffices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOfficesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISiteService">
+    <wsdl:operation name="AddAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/AddAction" message="tns:ISiteService_AddAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/AddActionResponse" message="tns:ISiteService_AddAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/AddLog" message="tns:ISiteService_AddLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/AddLogResponse" message="tns:ISiteService_AddLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetSite" message="tns:ISiteService_GetSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetSiteResponse" message="tns:ISiteService_GetSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSiteSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/AddSiteSetting" message="tns:ISiteService_AddSiteSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/AddSiteSettingResponse" message="tns:ISiteService_AddSiteSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/AddOperation" message="tns:ISiteService_AddOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/AddOperationResponse" message="tns:ISiteService_AddOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOperationGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/AddOperationGroup" message="tns:ISiteService_AddOperationGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/AddOperationGroupResponse" message="tns:ISiteService_AddOperationGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOperationType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/AddOperationType" message="tns:ISiteService_AddOperationType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/AddOperationTypeResponse" message="tns:ISiteService_AddOperationType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetAction" message="tns:ISiteService_GetAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetActionResponse" message="tns:ISiteService_GetAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActions">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetActions" message="tns:ISiteService_GetActions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetActionsResponse" message="tns:ISiteService_GetActions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetCurrentSite" message="tns:ISiteService_GetCurrentSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetCurrentSiteResponse" message="tns:ISiteService_GetCurrentSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetOperation" message="tns:ISiteService_GetOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetOperationResponse" message="tns:ISiteService_GetOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperations">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetOperations" message="tns:ISiteService_GetOperations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetOperationsResponse" message="tns:ISiteService_GetOperations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetOperationGroup" message="tns:ISiteService_GetOperationGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetOperationGroupResponse" message="tns:ISiteService_GetOperationGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetOperationGroups" message="tns:ISiteService_GetOperationGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetOperationGroupsResponse" message="tns:ISiteService_GetOperationGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetOperationType" message="tns:ISiteService_GetOperationType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetOperationTypeResponse" message="tns:ISiteService_GetOperationType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetOperationTypes" message="tns:ISiteService_GetOperationTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetOperationTypesResponse" message="tns:ISiteService_GetOperationTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetSetting" message="tns:ISiteService_GetSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetSettingResponse" message="tns:ISiteService_GetSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetSettings" message="tns:ISiteService_GetSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetSettingsResponse" message="tns:ISiteService_GetSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteSettingValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetSiteSettingValue" message="tns:ISiteService_GetSiteSettingValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetSiteSettingValueResponse" message="tns:ISiteService_GetSiteSettingValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSites">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetSites" message="tns:ISiteService_GetSites_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetSitesResponse" message="tns:ISiteService_GetSites_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSites">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetAllSites" message="tns:ISiteService_GetAllSites_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetAllSitesResponse" message="tns:ISiteService_GetAllSites_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteByUrl">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetSiteByUrl" message="tns:ISiteService_GetSiteByUrl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetSiteByUrlResponse" message="tns:ISiteService_GetSiteByUrl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/RemoveAction" message="tns:ISiteService_RemoveAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/RemoveActionResponse" message="tns:ISiteService_RemoveAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSiteSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/RemoveSiteSetting" message="tns:ISiteService_RemoveSiteSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/RemoveSiteSettingResponse" message="tns:ISiteService_RemoveSiteSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/RemoveOperation" message="tns:ISiteService_RemoveOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/RemoveOperationResponse" message="tns:ISiteService_RemoveOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOperationGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/RemoveOperationGroup" message="tns:ISiteService_RemoveOperationGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/RemoveOperationGroupResponse" message="tns:ISiteService_RemoveOperationGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOperationType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/RemoveOperationType" message="tns:ISiteService_RemoveOperationType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/RemoveOperationTypeResponse" message="tns:ISiteService_RemoveOperationType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/SaveAction" message="tns:ISiteService_SaveAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/SaveActionResponse" message="tns:ISiteService_SaveAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/SaveSetting" message="tns:ISiteService_SaveSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/SaveSettingResponse" message="tns:ISiteService_SaveSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSettingValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/SaveSettingValue" message="tns:ISiteService_SaveSettingValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/SaveSettingValueResponse" message="tns:ISiteService_SaveSettingValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/SaveOperation" message="tns:ISiteService_SaveOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/SaveOperationResponse" message="tns:ISiteService_SaveOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOperationGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/SaveOperationGroup" message="tns:ISiteService_SaveOperationGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/SaveOperationGroupResponse" message="tns:ISiteService_SaveOperationGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOperationType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/SaveOperationType" message="tns:ISiteService_SaveOperationType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/SaveOperationTypeResponse" message="tns:ISiteService_SaveOperationType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/SaveSite" message="tns:ISiteService_SaveSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/SaveSiteResponse" message="tns:ISiteService_SaveSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/AddSite" message="tns:ISiteService_AddSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/AddSiteResponse" message="tns:ISiteService_AddSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOperationGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetAllOperationGroups" message="tns:ISiteService_GetAllOperationGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetAllOperationGroupsResponse" message="tns:ISiteService_GetAllOperationGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationGroupForEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetOperationGroupForEdit" message="tns:ISiteService_GetOperationGroupForEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetOperationGroupForEditResponse" message="tns:ISiteService_GetOperationGroupForEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOperationTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetAllOperationTypes" message="tns:ISiteService_GetAllOperationTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetAllOperationTypesResponse" message="tns:ISiteService_GetAllOperationTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOperations">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetAllOperations" message="tns:ISiteService_GetAllOperations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetAllOperationsResponse" message="tns:ISiteService_GetAllOperations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationForEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetOperationForEdit" message="tns:ISiteService_GetOperationForEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetOperationForEditResponse" message="tns:ISiteService_GetOperationForEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSettingForId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetSettingForId" message="tns:ISiteService_GetSettingForId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetSettingForIdResponse" message="tns:ISiteService_GetSettingForId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLogReturnId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/AddLogReturnId" message="tns:ISiteService_AddLogReturnId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/AddLogReturnIdResponse" message="tns:ISiteService_AddLogReturnId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOffices">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetAllOffices" message="tns:ISiteService_GetAllOffices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetAllOfficesResponse" message="tns:ISiteService_GetAllOffices_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISiteService" type="tns:ISiteService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddAction">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/AddAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLog">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/AddLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSite">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSiteSetting">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/AddSiteSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOperation">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/AddOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOperationGroup">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/AddOperationGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOperationType">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/AddOperationType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAction">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActions">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetActions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentSite">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetCurrentSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperation">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperations">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetOperations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationGroup">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetOperationGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationGroups">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetOperationGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationType">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetOperationType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationTypes">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetOperationTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSetting">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSettings">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteSettingValue">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetSiteSettingValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSites">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetSites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSites">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetAllSites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteByUrl">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetSiteByUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAction">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/RemoveAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSiteSetting">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/RemoveSiteSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOperation">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/RemoveOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOperationGroup">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/RemoveOperationGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOperationType">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/RemoveOperationType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAction">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/SaveAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSetting">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/SaveSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSettingValue">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/SaveSettingValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOperation">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/SaveOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOperationGroup">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/SaveOperationGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOperationType">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/SaveOperationType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSite">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/SaveSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSite">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/AddSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOperationGroups">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetAllOperationGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationGroupForEdit">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetOperationGroupForEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOperationTypes">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetAllOperationTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOperations">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetAllOperations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationForEdit">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetOperationForEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSettingForId">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetSettingForId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLogReturnId">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/AddLogReturnId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOffices">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetAllOffices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SiteHostService">
+    <wsdl:port name="BasicHttpBinding_ISiteService" binding="tns:BasicHttpBinding_ISiteService">
+      <soap:address location="http://localhost:35001/SiteHostService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

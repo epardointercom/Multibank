@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Multibank.Autorizador.Views.Terms"
+             xmlns:local="clr-namespace:Multibank.Autorizador.MarkupExtensions">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ActivityIndicator IsRunning="{Binding IsBusy, Mode=TwoWay}" 
+                           Grid.RowSpan="2"
+                           Color="#555" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center"/>
+        <ScrollView Grid.Row="0">
+            <StackLayout VerticalOptions="Center" 
+                         Padding="40,5,40,0">
+                <Image Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.logo.png}" 
+                       HorizontalOptions="Center"/>
+                <StackLayout HorizontalOptions="Start"
+                             Margin="0,20,0,0">
+                    <Label TextColor="{StaticResource Primary}"
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           Text="Terminos y condiciones"/>
+                    <StackLayout BackgroundColor="{StaticResource Primary}" 
+                                 HeightRequest="2">
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <Label Margin="0,20,0,0"
+                       TextColor="{StaticResource MediumGrayTextColor}"
+                       Text="REGLAMENTO PARA EL USO DEL SERVICIO DE BANCA EN LÍNEA PERSONA NATURAL&lt;/span&gt;&lt;/h2&gt;\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;Font Face=&quot;arial&quot; Size=2&gt;&lt;strong&gt;PRIMERA - OBJETO:&lt;/strong&gt; Mediante el presente Reglamento para el uso del servicio de BANCA EN LÍNEA (en adelante EL REGLAMENTO) se determinan los parámetros para la utilización de los servicios ofrecidos a través de internet (en adelante LOS  SERVICIOS) prestados por el BANCO MULTIBANK S.A. (en adelante EL BANCO) a sus clientes (en adelante EL CLIENTE) para consultas y operaciones que se pueden realizar a través de LOS SERVICIOS, se entienden relacionadas directamente con los productos ofrecidos por EL BANCO a EL CLIENTE, por lo tanto las normas establecidas en los convenios y/o reglamentos que regulen dichos productos, serán aplicables en lo pertinente al presente Reglamento.&lt;/p&gt;\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;Font Face=&quot;arial&quot; Size=2&gt;&lt;strong&gt;SEGUNDA - SOLICITUD DE LOS SERVICIOS:&lt;/strong&gt; Para solicitar LOS SERVICIOS de Banca en Línea, EL CLIENTE deberá estar debidamente vinculado con un producto en estado activo con EL BANCO, EL CLIENTE de Banca Personal deberá leer cuidadosamente los Términos y Condiciones del presente reglamento y de ser procedente realizar su aceptación durante el registro a la Banca en Línea a través de la página www.multibank.com.co, sección Banca en Línea Personas, opción Registro, esta aceptación es indispensable para el registro.&lt;/p&gt;\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;Font Face=&quot;arial&quot; Size=2&gt;&lt;strong&gt;TERCERA - OPERACIONES:&lt;/strong&gt; A través de LOS SERVICIOS, EL CLIENTE podrá realizar diferentes operaciones que serán informadas de manera previa por EL BANCO de conformidad con el portafolio de cada CLIENTE. Además EL CLIENTE podrá realizar cualquier transacción que EL BANCO decidiere prestar en el futuro a través de este servicio, utilizando para el efecto la clave de acceso, la cual será personal e intransferible PARÁGRAFO PRIMERO: EL CLIENTE se obliga a no utilizar el servicio de BANCA EN LÍNEA para realizar transacciones cuyo origen, fin o destino sea ilícito o prohibido por la ley o autoridad competente o se enmarque dentro de actividades catalogadas por la ley como Lavado de Activos o Financiación del Terrorismo. PARÁGRAFO SEGUNDO: Queda claramente establecido que las disposiciones contenidas en el presente también aplicarán para el caso de otros sistemas de autenticación fuerte para acceder a LOS SERVICIOS, tales como Autenticación multifactor, Autenticación mediante imagen, Autenticación mediante preguntas  de desafío o preguntas secretas, Autenticación mediante OTP por token de Software o por token físico, Autenticación mediante correo, Autenticación SMS, Autenticación mediante tarjeta de coordenadas.&lt;/p&gt;\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;Font Face=&quot;arial&quot; Size=2&gt;&lt;strong&gt;CUARTA - PROCEDIMIENTO PARA EL INGRESO AL SISTEMA:&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;EL CLIENTE de Banca Personal realizará su Auto Registro desde la página www.multibank.com.co,  sección BANCA EN LÍNEA PERSONAS, utilizando el respectivo botón de registro. EL CLIENTE deberá aceptar el presente REGLAMENTO para poder continuar con la inscripción al servicio, el sistema solicitará que EL CLIENTE digite su tipo de identificación y número de identificación, con esta información se determinará si el cliente es elegible para continuar con la inscripción, en caso positivo se solicitará al cliente definir un usuario y una contraseña que seguirá utilizando para el ingreso a la Banca, posteriormente se enviará al correo registrado por EL CLIENTE en EL BANCO una clave de activación, momento en el cual EL CLIENTE deberá contactar a la Línea de Atención al Consumidor Financiero para realizar la activación del canal, tras realizar la misma debe ingresar en la pantalla de registro para continuar con el acceso en donde ingresará su nombre de usuario, contraseña y clave de activación que llegó al correo, \r\nEL CLIENTE manifiesta que el correo electrónico que reposa en la base de datos de EL BANCO es de su uso exclusivo obligándose a mantener bajo estricta confidencialidad y reserva las contraseñas de acceso y no permitir que terceras personas accedan al mismo; de igual forma se hace responsable por el uso, manejo, confidencialidad y reserva respecto de las credenciales de acceso enviadas por el servicio de BANCA  EN LÍNEA.&lt;/li&gt;\r\n&lt;li&gt;Una vez el cliente ingresa la clave de activación recibida, podrá continuar con el proceso de inscripción definiendo una imagen de seguridad y las preguntas desafío. El uso del (los) servicio adicional (les) de Sistemas de Autenticación Fuerte descrito(s) en la cláusula tercera es obligatorio para realizar transacciones en la BANCA EN LÍNEA, EL CLIENTE declara que conoce las condiciones de uso de lo(s) mismo(s), las cuales se describen a continuación:&lt;/li&gt;\r\nCondiciones de Uso de sistemas de autenticación fuerte: El CLIENTE se obliga a mantener la custodia y reserva de la información de autenticación y/o el uso exclusivo del (los) servicio adicional (les) de Sistemas de Autenticación Fuerte, haciéndose responsable por el uso de dichas herramientas frente a EL BANCO, las cuales son personales, reservadas  e intransferibles, de forma que EL CLIENTE se obliga a no permitir que terceras personas accedan a BANCA EN LÍNEA  usando su clave y a establecer los controles necesarios para tal fin. La omisión de cualquiera de estas condiciones de Uso de sistemas de autenticación fuerte, así como las demás recomendaciones entregadas por EL BANCO  constituye incumplimiento de las obligaciones aquí descritas.\r\n&lt;li&gt;EL CLIENTE recibirá del BANCO el dispositivo de autenticación fuerte o las instrucciones para obtener este mecanismo, a su vez durante el proceso de transferencias a terceros o pagos el cliente deberá contar con el dispositivo de autenticación fuerte de seguridad para terminar el proceso.&lt;/li&gt;\r\n&lt;li&gt;EL CLIENTE deberá ingresar a Banca en Línea con su respectivo usuario y contraseña. En caso que EL CLIENTE olvide su nombre de usuario, podrá auto gestionar la recuperación del mismo mediante el envío del usuario al correo electrónico inscrito en EL BANCO, igualmente podrá auto gestionar la recuperación de la contraseña a través de la respuesta de preguntas definidas por el usuario previamente o el uso del mecanismo de autenticación definido por EL BANCO, si EL CLIENTE bloquea su usuario por intentos fallidos debe comunicase con la Línea de Atención al Consumidor Financiero para cambio de estado del usuario a Activo, de acuerdo a los procedimientos informados en el instructivo banca en línea publicado en la página web del BANCO.&lt;/li&gt;\r\n&lt;li&gt;Cada vez que el cliente ingrese desde un equipo que no haya sido registrado como un equipo seguro, se solicitará responder tres de las preguntas desafío para acceder al sistema, si el cliente registra el equipo como un equipo seguro, no se solicitará las respuestas a las preguntas desafío en su siguiente ingreso. La información del equipo se almacena en el explorador mientras que la información del historial de navegación esté disponible, si se borran las cookies del navegador el cliente debe registrar nuevamente el equipo como equipo seguro."/>
+                </StackLayout>
+                <Grid HorizontalOptions="End"
+                      Padding="0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MultibankCommand}" NumberOfTapsRequired="1"/>
+                    </Grid.GestureRecognizers>
+                    <Image Grid.Column="0" 
+                           WidthRequest="18"
+                           HorizontalOptions="End"
+                           Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.mouse.png}"></Image>
+                    <Label Grid.Column="1"
+                           TextColor="{StaticResource Primary}"
+                           FontAttributes="Bold"
+                           HorizontalOptions="End"
+                           Text="¿Quiénes Somos?"/>
+                    <Image Grid.Column="2"
+                           WidthRequest="7"
+                           HorizontalOptions="End"
+                           Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.pointer.png}"></Image>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+        <Grid Grid.Row="1"
+              BackgroundColor="{StaticResource Primary}"
+              Padding="20,0,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0"
+                         VerticalOptions="Center"
+                         HorizontalOptions="StartAndExpand">
+                <Grid>
+                    <Image Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.border_guard.png}" 
+                           Aspect="Fill"/>
+                    <StackLayout>
+                        <Label Text="V I G I L A D O" 
+                               TextColor="#FFF"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+            <Label Grid.Column="1"
+                   Text="SUPER INTENDENCIA FINANCIERA DE COLOMBIA" 
+                   HorizontalTextAlignment="Center"
+                   TextColor="#FFF"
+                   FontSize="10"
+                   FontAttributes="Bold"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="Center"/>
+        </Grid>
+    </Grid>
+</ContentPage>

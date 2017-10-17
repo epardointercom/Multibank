@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ViewHostService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="ViewHostService.xsd" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="ViewHostService_1_2_3_4.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="ViewHostService_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" />
+      <xsd:import schemaLocation="ViewHostService_1_2.xsd" namespace="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" />
+      <xsd:import schemaLocation="ViewHostService_1_2_3.xsd" namespace="http://schemas.datacontract.org/2004/07/Repository.Pattern.Infrastructure" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IViewService_AddView_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddView" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_AddView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetViewLayout_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewLayout" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetViewLayout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewLayoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetViewLayouts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewLayouts" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetViewLayouts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewLayoutsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetView_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetView" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetMenuViews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuViews" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetMenuViews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuViewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetViews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViews" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetViews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetViewsForParentView_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewsForParentView" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetViewsForParentView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewsForParentViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetViewActionByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewActionByName" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetViewActionByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewActionByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetViewByActionAndName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewByActionAndName" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetViewByActionAndName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewByActionAndNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_RemoveView_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveView" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_RemoveView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_SaveView_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveView" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_SaveView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetSiteAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteAction" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetSiteAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_SaveLayout_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLayout" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_SaveLayout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLayoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_AddLayout_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLayout" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_AddLayout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLayoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetValueLayout_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetValueLayout" />
+  </wsdl:message>
+  <wsdl:message name="IViewService_GetValueLayout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetValueLayoutResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IViewService">
+    <wsdl:operation name="AddView">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/AddView" message="tns:IViewService_AddView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/AddViewResponse" message="tns:IViewService_AddView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViewLayout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/GetViewLayout" message="tns:IViewService_GetViewLayout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/GetViewLayoutResponse" message="tns:IViewService_GetViewLayout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViewLayouts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/GetViewLayouts" message="tns:IViewService_GetViewLayouts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/GetViewLayoutsResponse" message="tns:IViewService_GetViewLayouts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetView">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/GetView" message="tns:IViewService_GetView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/GetViewResponse" message="tns:IViewService_GetView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuViews">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/GetMenuViews" message="tns:IViewService_GetMenuViews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/GetMenuViewsResponse" message="tns:IViewService_GetMenuViews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViews">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/GetViews" message="tns:IViewService_GetViews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/GetViewsResponse" message="tns:IViewService_GetViews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViewsForParentView">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/GetViewsForParentView" message="tns:IViewService_GetViewsForParentView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/GetViewsForParentViewResponse" message="tns:IViewService_GetViewsForParentView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViewActionByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/GetViewActionByName" message="tns:IViewService_GetViewActionByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/GetViewActionByNameResponse" message="tns:IViewService_GetViewActionByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViewByActionAndName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/GetViewByActionAndName" message="tns:IViewService_GetViewByActionAndName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/GetViewByActionAndNameResponse" message="tns:IViewService_GetViewByActionAndName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveView">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/RemoveView" message="tns:IViewService_RemoveView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/RemoveViewResponse" message="tns:IViewService_RemoveView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveView">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/SaveView" message="tns:IViewService_SaveView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/SaveViewResponse" message="tns:IViewService_SaveView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/GetSiteAction" message="tns:IViewService_GetSiteAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/GetSiteActionResponse" message="tns:IViewService_GetSiteAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLayout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/SaveLayout" message="tns:IViewService_SaveLayout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/SaveLayoutResponse" message="tns:IViewService_SaveLayout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLayout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/AddLayout" message="tns:IViewService_AddLayout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/AddLayoutResponse" message="tns:IViewService_AddLayout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValueLayout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IViewService/GetValueLayout" message="tns:IViewService_GetValueLayout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IViewService/GetValueLayoutResponse" message="tns:IViewService_GetValueLayout_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IViewService" type="tns:IViewService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddView">
+      <soap:operation soapAction="http://tempuri.org/IViewService/AddView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViewLayout">
+      <soap:operation soapAction="http://tempuri.org/IViewService/GetViewLayout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViewLayouts">
+      <soap:operation soapAction="http://tempuri.org/IViewService/GetViewLayouts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetView">
+      <soap:operation soapAction="http://tempuri.org/IViewService/GetView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuViews">
+      <soap:operation soapAction="http://tempuri.org/IViewService/GetMenuViews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViews">
+      <soap:operation soapAction="http://tempuri.org/IViewService/GetViews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViewsForParentView">
+      <soap:operation soapAction="http://tempuri.org/IViewService/GetViewsForParentView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViewActionByName">
+      <soap:operation soapAction="http://tempuri.org/IViewService/GetViewActionByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViewByActionAndName">
+      <soap:operation soapAction="http://tempuri.org/IViewService/GetViewByActionAndName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveView">
+      <soap:operation soapAction="http://tempuri.org/IViewService/RemoveView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveView">
+      <soap:operation soapAction="http://tempuri.org/IViewService/SaveView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteAction">
+      <soap:operation soapAction="http://tempuri.org/IViewService/GetSiteAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLayout">
+      <soap:operation soapAction="http://tempuri.org/IViewService/SaveLayout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLayout">
+      <soap:operation soapAction="http://tempuri.org/IViewService/AddLayout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValueLayout">
+      <soap:operation soapAction="http://tempuri.org/IViewService/GetValueLayout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ViewHostService">
+    <wsdl:port name="BasicHttpBinding_IViewService" binding="tns:BasicHttpBinding_IViewService">
+      <soap:address location="http://localhost:35001/ViewHostService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserHostService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="UserHostService.xsd" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="UserHostService_1_2_3_4.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="UserHostService_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" />
+      <xsd:import schemaLocation="UserHostService_1_2.xsd" namespace="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" />
+      <xsd:import schemaLocation="UserHostService_1_2_3.xsd" namespace="http://schemas.datacontract.org/2004/07/Repository.Pattern.Infrastructure" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUserService_ActivateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_ActivateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserState_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserState" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserStates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserStates" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserStates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByName" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_RemoveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_RemoveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_SaveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_SaveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_AddUserToRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserToRole" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_AddUserToRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserToRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_AddUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserRole" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_AddUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserByCustomerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByCustomerId" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserByCustomerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByCustomerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoles" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRole" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_AddRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRole" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_AddRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_SaveRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveRole" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_SaveRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUsersForType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersForType" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUsersForType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersForTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_RemoveUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserRole" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_RemoveUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUsersForCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersForCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUsersForCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersForCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_SaveUserState_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserState" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_SaveUserState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_AddUserState_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserState" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_AddUserState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserEmployeeByCustomerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserEmployeeByCustomerId" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserEmployeeByCustomerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserEmployeeByCustomerIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUserService">
+    <wsdl:operation name="ActivateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/ActivateUser" message="tns:IUserService_ActivateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/ActivateUserResponse" message="tns:IUserService_ActivateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/AddUser" message="tns:IUserService_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/AddUserResponse" message="tns:IUserService_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUserState" message="tns:IUserService_GetUserState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUserStateResponse" message="tns:IUserService_GetUserState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserStates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUserStates" message="tns:IUserService_GetUserStates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUserStatesResponse" message="tns:IUserService_GetUserStates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUser" message="tns:IUserService_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUserResponse" message="tns:IUserService_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUserByName" message="tns:IUserService_GetUserByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUserByNameResponse" message="tns:IUserService_GetUserByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUsers" message="tns:IUserService_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUsersResponse" message="tns:IUserService_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/RemoveUser" message="tns:IUserService_RemoveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/RemoveUserResponse" message="tns:IUserService_RemoveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/SaveUser" message="tns:IUserService_SaveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/SaveUserResponse" message="tns:IUserService_SaveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/AddUserToRole" message="tns:IUserService_AddUserToRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/AddUserToRoleResponse" message="tns:IUserService_AddUserToRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/AddUserRole" message="tns:IUserService_AddUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/AddUserRoleResponse" message="tns:IUserService_AddUserRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByCustomerId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUserByCustomerId" message="tns:IUserService_GetUserByCustomerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUserByCustomerIdResponse" message="tns:IUserService_GetUserByCustomerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetRoles" message="tns:IUserService_GetRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetRolesResponse" message="tns:IUserService_GetRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetRole" message="tns:IUserService_GetRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetRoleResponse" message="tns:IUserService_GetRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/AddRole" message="tns:IUserService_AddRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/AddRoleResponse" message="tns:IUserService_AddRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/SaveRole" message="tns:IUserService_SaveRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/SaveRoleResponse" message="tns:IUserService_SaveRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUsersForType" message="tns:IUserService_GetUsersForType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUsersForTypeResponse" message="tns:IUserService_GetUsersForType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/RemoveUserRole" message="tns:IUserService_RemoveUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/RemoveUserRoleResponse" message="tns:IUserService_RemoveUserRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUsersForCustomer" message="tns:IUserService_GetUsersForCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUsersForCustomerResponse" message="tns:IUserService_GetUsersForCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/SaveUserState" message="tns:IUserService_SaveUserState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/SaveUserStateResponse" message="tns:IUserService_SaveUserState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/AddUserState" message="tns:IUserService_AddUserState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/AddUserStateResponse" message="tns:IUserService_AddUserState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmployeeByCustomerId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUserEmployeeByCustomerId" message="tns:IUserService_GetUserEmployeeByCustomerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUserEmployeeByCustomerIdResponse" message="tns:IUserService_GetUserEmployeeByCustomerId_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUserService" type="tns:IUserService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ActivateUser">
+      <soap:operation soapAction="http://tempuri.org/IUserService/ActivateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/IUserService/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserState">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUserState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserStates">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUserStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByName">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUserByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <soap:operation soapAction="http://tempuri.org/IUserService/RemoveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <soap:operation soapAction="http://tempuri.org/IUserService/SaveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToRole">
+      <soap:operation soapAction="http://tempuri.org/IUserService/AddUserToRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserRole">
+      <soap:operation soapAction="http://tempuri.org/IUserService/AddUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByCustomerId">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUserByCustomerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRole">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRole">
+      <soap:operation soapAction="http://tempuri.org/IUserService/AddRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRole">
+      <soap:operation soapAction="http://tempuri.org/IUserService/SaveRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForType">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUsersForType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserRole">
+      <soap:operation soapAction="http://tempuri.org/IUserService/RemoveUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForCustomer">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUsersForCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserState">
+      <soap:operation soapAction="http://tempuri.org/IUserService/SaveUserState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserState">
+      <soap:operation soapAction="http://tempuri.org/IUserService/AddUserState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmployeeByCustomerId">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUserEmployeeByCustomerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserHostService">
+    <wsdl:port name="BasicHttpBinding_IUserService" binding="tns:BasicHttpBinding_IUserService">
+      <soap:address location="http://localhost:35001/UserHostService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

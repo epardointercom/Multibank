@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Multibank.Autorizador.Views.Contact"
+             xmlns:local="clr-namespace:Multibank.Autorizador.MarkupExtensions">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ActivityIndicator IsRunning="{Binding IsBusy, Mode=TwoWay}" 
+                           Grid.RowSpan="2"
+                           Color="#555" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center"/>
+        <ScrollView Grid.Row="0">
+            <StackLayout VerticalOptions="Center" 
+                         Padding="40,5,40,0">
+                <Image Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.logo.png}" 
+                       HorizontalOptions="Center"/>
+                <StackLayout HorizontalOptions="Start"
+                             Margin="0,20,0,0">
+                    <Label TextColor="{StaticResource Primary}"
+                           FontAttributes="Bold"
+                           Text="Multicenter:"/>
+                    <StackLayout BackgroundColor="{StaticResource Primary}" 
+                                 HeightRequest="1">
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Margin="0,20,0,0">
+                    <Label TextColor="{StaticResource Primary}"
+                           Text="En Bogotá"/>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CallButtonCommand}"
+                                                  CommandParameter="{Binding LocalNumber}"
+                                                  NumberOfTapsRequired="1"/>
+                        </Grid.GestureRecognizers>
+                        <Label Grid.Column="0"
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="{StaticResource Primary}"
+                               FontAttributes="Bold"
+                               FontSize="20"
+                               Text="{Binding LocalNumber}"/>
+                        <Image Grid.Column="0"
+                               HorizontalOptions="End"
+                               WidthRequest="40"
+                               Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.call.png}"/>
+                    </Grid>
+                    <StackLayout BackgroundColor="{StaticResource Primary}" 
+                                 HeightRequest="2">
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Margin="0,20,0,0">
+                    <Label TextColor="{StaticResource Primary}"
+                           Text="A nivel nacional"/>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CallButtonCommand}"
+                                                  CommandParameter="{Binding NationalNumber}"
+                                                  NumberOfTapsRequired="1"/>
+                        </Grid.GestureRecognizers>
+                        <Label Grid.Column="0"
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="{StaticResource Primary}"
+                               FontAttributes="Bold"
+                               FontSize="20"
+                               Text="{Binding NationalNumber}"/>
+                        <Image Grid.Column="0"
+                               HorizontalOptions="End"
+                               WidthRequest="40"
+                               Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.call.png}"/>
+                    </Grid>
+                    <StackLayout BackgroundColor="{StaticResource Primary}" 
+                                 HeightRequest="2">
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <!--Footer-->
+        <Grid Grid.Row="1"
+              BackgroundColor="{StaticResource Primary}"
+              Padding="20,0,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0"
+                         VerticalOptions="Center"
+                         HorizontalOptions="StartAndExpand">
+                <Grid>
+                    <Image Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.border_guard.png}" 
+                           Aspect="Fill"/>
+                    <StackLayout>
+                        <Label Text="V I G I L A D O" 
+                               TextColor="#FFF"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+            <Label Grid.Column="1"
+                   Text="SUPER INTENDENCIA FINANCIERA DE COLOMBIA" 
+                   HorizontalTextAlignment="Center"
+                   TextColor="#FFF"
+                   FontSize="10"
+                   FontAttributes="Bold"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="Center"/>
+        </Grid>
+    </Grid>
+</ContentPage>

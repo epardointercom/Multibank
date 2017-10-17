@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Multibank.Autorizador.Views.Login"
+             xmlns:local="clr-namespace:Multibank.Autorizador.MarkupExtensions">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ActivityIndicator IsRunning="{Binding IsBusy, Mode=TwoWay}" 
+                           Grid.RowSpan="2"
+                           Color="#555" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center"/>
+        <ScrollView Grid.Row="0">
+            <StackLayout VerticalOptions="Center" 
+                         Padding="40,5,40,0"
+                         Spacing="5">
+                <Image Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.logo.png}" 
+                       HorizontalOptions="Center"/>
+                <Entry Margin="0,20,0,0" 
+                       Placeholder="Número de convenio"
+                       Text="{Binding Agreement}"
+                       Keyboard="Numeric"/>
+                <Entry Placeholder="Ingrese su usario"
+                       Text="{Binding UserName}"/>
+                <Entry Placeholder="Ingrese su contraseña"
+                       IsPassword="true"
+                       Text="{Binding Password}"/>
+                <Label Text="{Binding Message, Mode=OneWay}" 
+                       TextColor="#0072BD" 
+                       HorizontalTextAlignment="Center"/>
+                <Button Text="INGRESAR" 
+                        HorizontalOptions="Center"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="#fff"
+                        FontSize="16"
+                        BorderColor="{StaticResource Primary}"
+                        BorderWidth="1"
+                        BorderRadius="10"
+                        Command="{Binding LoginCommand}">
+                    <Button.BorderRadius>
+                        <OnPlatform x:TypeArguments="x:Int32">
+                            <OnPlatform.Android>1</OnPlatform.Android>
+                        </OnPlatform>
+                    </Button.BorderRadius>
+                </Button>
+                <Grid>
+                    <StackLayout Grid.Column="0" 
+                                 Padding="5">
+                        <Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding AboutCommand}" NumberOfTapsRequired="1"/>
+                            </Grid.GestureRecognizers>
+                            <Image Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.ico_red.png}"/>
+                            <StackLayout HorizontalOptions="Center"
+                                         VerticalOptions="End"
+                                         Padding="5,5,5,18">
+                                <Label Text="Multibank"
+                                       TextColor="#fff"
+                                       FontSize="10"
+                                       HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1"
+                                 Padding="5">
+                        <Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OfficesCommand}" NumberOfTapsRequired="1"/>
+                            </Grid.GestureRecognizers>
+                            <Image Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.location_red.png}" />
+                            <StackLayout HorizontalOptions="Center"
+                                         VerticalOptions="End"
+                                         Padding="5,5,5,18">
+                                <Label Text="Oficinas"
+                                       TextColor="#fff"
+                                       FontSize="10"
+                                       HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout Grid.Column="2"
+                                 Padding="5">
+                        <Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ContactCommand}" NumberOfTapsRequired="1"/>
+                            </Grid.GestureRecognizers>
+                            <Image Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.contact_red.png}" />
+                            <StackLayout HorizontalOptions="Center"
+                                         VerticalOptions="End"
+                                         Padding="5,5,5,18">
+                                <Label Text="Contáctenos"
+                                       TextColor="#fff"
+                                       FontSize="10"
+                                       HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+                <Grid>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding TermsCommand}" NumberOfTapsRequired="1"/>
+                    </Grid.GestureRecognizers>
+                    <Image Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.border_red.png}" 
+                           Aspect="Fill"/>
+                    <StackLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   Text="Términos y condiciones"
+                                   TextColor="{StaticResource Primary}"
+                                   HorizontalOptions="StartAndExpand"
+                                   VerticalOptions="Center"/>
+                            <Image Grid.Column="1"
+                                   Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.chevron_right_red.png}" 
+                                   WidthRequest="15"
+                                   HeightRequest="20"
+                                   HorizontalOptions="EndAndExpand"
+                                   VerticalOptions="Center"/>
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+        <Grid Grid.Row="1"
+              BackgroundColor="{StaticResource Primary}"
+              Padding="20,0,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0"
+                         VerticalOptions="Center"
+                         HorizontalOptions="StartAndExpand">
+                <Grid>
+                    <Image Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.border_guard.png}" 
+                           Aspect="Fill"/>
+                    <StackLayout>
+                        <Label Text="V I G I L A D O" 
+                               TextColor="#FFF"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+            <Label Grid.Column="1"
+                   Text="SUPER INTENDENCIA FINANCIERA DE COLOMBIA" 
+                   HorizontalTextAlignment="Center"
+                   TextColor="#FFF"
+                   FontSize="10"
+                   FontAttributes="Bold"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="Center"/>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ViewHostService_1.xsd" namespace="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" />
+  <xs:element name="AddView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" minOccurs="0" name="view" nillable="true" type="q1:View" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddViewResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewLayout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="layoutId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewLayoutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" minOccurs="0" name="GetViewLayoutResult" nillable="true" type="q2:Layout" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewLayouts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="viewId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewLayoutsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" minOccurs="0" name="GetViewLayoutsResult" nillable="true" type="q3:ArrayOfLayout" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="viewId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" minOccurs="0" name="GetViewResult" nillable="true" type="q4:View" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMenuViews">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMenuViewsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" minOccurs="0" name="GetMenuViewsResult" nillable="true" type="q5:ArrayOfView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViews">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" minOccurs="0" name="GetViewsResult" nillable="true" type="q6:ArrayOfView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewsForParentView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parentViewId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewsForParentViewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" minOccurs="0" name="GetViewsForParentViewResult" nillable="true" type="q7:ArrayOfView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewActionByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="actionName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewActionByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" minOccurs="0" name="GetViewActionByNameResult" nillable="true" type="q8:SiteAction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewByActionAndName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteActionId" type="xs:int" />
+        <xs:element minOccurs="0" name="viewName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewByActionAndNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" minOccurs="0" name="GetViewByActionAndNameResult" nillable="true" type="q9:View" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="viewId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveViewResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" minOccurs="0" name="view" nillable="true" type="q10:View" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveViewResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteAction">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteActionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" minOccurs="0" name="GetSiteActionResult" nillable="true" type="q11:ArrayOfSiteAction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveLayout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" minOccurs="0" name="pLayout" nillable="true" type="q12:Layout" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveLayoutResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddLayout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" minOccurs="0" name="pLayout" nillable="true" type="q13:Layout" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddLayoutResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetValueLayout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pViewId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetValueLayoutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetValueLayoutResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Multibank.Autorizador.Views.About"
+             xmlns:local="clr-namespace:Multibank.Autorizador.MarkupExtensions">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ActivityIndicator IsRunning="{Binding IsBusy, Mode=TwoWay}" 
+                           Grid.RowSpan="2"
+                           Color="#555" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center"/>
+        <ScrollView Grid.Row="0">
+            <StackLayout VerticalOptions="Center" 
+                         Padding="40,5,40,0">
+                <Image Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.logo.png}" 
+                       HorizontalOptions="Center"/>
+                <StackLayout HorizontalOptions="Start"
+                             Margin="0,20,0,0">
+                    <Label TextColor="{StaticResource Primary}"
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           Text="¿Quiénes Somos?"/>
+                    <StackLayout BackgroundColor="{StaticResource Primary}" 
+                                 HeightRequest="2">
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <Label Margin="0,20,0,0"
+                       TextColor="{StaticResource MediumGrayTextColor}"
+                       Text="Multibank Colombia es una entidad bancaria vigilada por la Superintendencia Financiera de Colombia. La estrategia de negocio de Multibank es convertise en el aliado estratégico de las empresas colombianas y atender sus necesidades de financiamiento a través de servicios como créditos, factoring, captación con cuentas de ahorro, cuenta corriente, CDT, operaciones FX(giros y reintegros) y de tesorería, dejando a disposición ocho (8) oficinas en las principales ciudades del país: Bogotá, Barranquilla, Cali, Pereira, Manizalez y Medellín, donde atiende de manera oportuna y eficiente las necesidades de sus clientes. Valores Corporativos: - Honestidad - Equidad - Compromiso con la Excelencia - Iniciativa - Perseverancia"/>
+                </StackLayout>
+                <Grid HorizontalOptions="End"
+                      Padding="0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MultibankCommand}" NumberOfTapsRequired="1"/>
+                    </Grid.GestureRecognizers>
+                    <Image Grid.Column="0" 
+                           WidthRequest="18"
+                           HorizontalOptions="End"
+                           Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.mouse.png}"></Image>
+                    <Label Grid.Column="1"
+                           TextColor="{StaticResource Primary}"
+                           FontAttributes="Bold"
+                           HorizontalOptions="End"
+                           Text="¿Quiénes Somos?"/>
+                    <Image Grid.Column="2"
+                           WidthRequest="7"
+                           HorizontalOptions="End"
+                           Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.pointer.png}"></Image>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+        <Grid Grid.Row="1"
+              BackgroundColor="{StaticResource Primary}"
+              Padding="20,0,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0"
+                         VerticalOptions="Center"
+                         HorizontalOptions="StartAndExpand">
+                <Grid>
+                    <Image Source="{local:EmbeddedImage ResourceId = Multibank.Autorizador.Resources.border_guard.png}" 
+                           Aspect="Fill"/>
+                    <StackLayout>
+                        <Label Text="V I G I L A D O" 
+                               TextColor="#FFF"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+            <Label Grid.Column="1"
+                   Text="SUPER INTENDENCIA FINANCIERA DE COLOMBIA" 
+                   HorizontalTextAlignment="Center"
+                   TextColor="#FFF"
+                   FontSize="10"
+                   FontAttributes="Bold"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="Center"/>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Multibank.Autorizador.Views.Authorizer">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Client.CompleteName}" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+            <Button Margin="0,10" 
+                    Text="Logout" 
+                    BackgroundColor="#0072BD" 
+                    TextColor="White" 
+                    FontSize="18" 
+                    Command="{Binding LogoutCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

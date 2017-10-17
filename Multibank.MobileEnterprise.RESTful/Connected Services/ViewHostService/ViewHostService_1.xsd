@@ -1,0 +1,1603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="ViewHostService_1_2.xsd" namespace="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" />
+  <xs:import schemaLocation="ViewHostService_1_2_3_4.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="View">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q1:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsMenu" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Layouts" nillable="true" type="tns:ArrayOfLayout" />
+          <xs:element minOccurs="0" name="MenuCssClass" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentViewId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SiteAction" nillable="true" type="tns:SiteAction" />
+          <xs:element minOccurs="0" name="SiteActionId" type="xs:int" />
+          <xs:element minOccurs="0" name="SortOrder" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Target" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tasks" nillable="true" type="tns:ArrayOfTask" />
+          <xs:element minOccurs="0" name="UseSecondPassword" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ViewId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="View" nillable="true" type="tns:View" />
+  <xs:complexType name="ArrayOfLayout">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Layout" nillable="true" type="tns:Layout" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLayout" nillable="true" type="tns:ArrayOfLayout" />
+  <xs:complexType name="Layout">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q2:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LayoutId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="View" nillable="true" type="tns:View" />
+          <xs:element minOccurs="0" name="ViewId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Layout" nillable="true" type="tns:Layout" />
+  <xs:complexType name="SiteAction">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q3:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SiteActionId" type="xs:int" />
+          <xs:element minOccurs="0" name="SiteOperation" nillable="true" type="tns:SiteOperation" />
+          <xs:element minOccurs="0" name="SiteOperationId" type="xs:int" />
+          <xs:element minOccurs="0" name="Views" nillable="true" type="tns:ArrayOfView" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SiteAction" nillable="true" type="tns:SiteAction" />
+  <xs:complexType name="SiteOperation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q4:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SiteActions" nillable="true" type="tns:ArrayOfSiteAction" />
+          <xs:element minOccurs="0" name="SiteOperationId" type="xs:int" />
+          <xs:element minOccurs="0" name="SiteOperationRecords" nillable="true" type="tns:ArrayOfSiteOperationRecord" />
+          <xs:element minOccurs="0" name="SiteOperationType" nillable="true" type="tns:SiteOperationType" />
+          <xs:element minOccurs="0" name="SiteOperationTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkFlows" nillable="true" type="tns:ArrayOfWorkFlow" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SiteOperation" nillable="true" type="tns:SiteOperation" />
+  <xs:complexType name="ArrayOfSiteAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteAction" nillable="true" type="tns:SiteAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteAction" nillable="true" type="tns:ArrayOfSiteAction" />
+  <xs:complexType name="ArrayOfSiteOperationRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteOperationRecord" nillable="true" type="tns:SiteOperationRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteOperationRecord" nillable="true" type="tns:ArrayOfSiteOperationRecord" />
+  <xs:complexType name="SiteOperationRecord">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q5:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MessageCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfParameterStructOfstringstring" />
+          <xs:element minOccurs="0" name="ParametersInXml" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RequestMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ResponseMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SiteOperationId" type="xs:int" />
+          <xs:element minOccurs="0" name="SiteOperationRecordId" type="xs:long" />
+          <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SiteOperationRecord" nillable="true" type="tns:SiteOperationRecord" />
+  <xs:complexType name="ArrayOfParameterStructOfstringstring">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParameterStructOfstringstring" type="tns:ParameterStructOfstringstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParameterStructOfstringstring" nillable="true" type="tns:ArrayOfParameterStructOfstringstring" />
+  <xs:complexType name="ParameterStructOfstringstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ParameterStructOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/Intercom.Core.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParameterStructOfstringstring" nillable="true" type="tns:ParameterStructOfstringstring" />
+  <xs:complexType name="SiteOperationType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q6:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SiteOperationGroup" nillable="true" type="tns:SiteOperationGroup" />
+          <xs:element minOccurs="0" name="SiteOperationGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="SiteOperationTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="SiteOperations" nillable="true" type="tns:ArrayOfSiteOperation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SiteOperationType" nillable="true" type="tns:SiteOperationType" />
+  <xs:complexType name="SiteOperationGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q7:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+          <xs:element minOccurs="0" name="SiteOperationGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="SiteOperationTypes" nillable="true" type="tns:ArrayOfSiteOperationType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SiteOperationGroup" nillable="true" type="tns:SiteOperationGroup" />
+  <xs:complexType name="Site">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q8:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="App" nillable="true" type="tns:App" />
+          <xs:element minOccurs="0" name="AppId" type="xs:int" />
+          <xs:element minOccurs="0" name="Branches" nillable="true" type="tns:ArrayOfBranch" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="tns:Company" />
+          <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomerTypes" nillable="true" type="tns:ArrayOfCustomerType" />
+          <xs:element minOccurs="0" name="Customers" nillable="true" type="tns:ArrayOfCustomer" />
+          <xs:element minOccurs="0" name="DataStoredTypes" nillable="true" type="tns:ArrayOfDataStoredType" />
+          <xs:element minOccurs="0" name="FinancialInstitutions" nillable="true" type="tns:ArrayOfFinancialInstitution" />
+          <xs:element minOccurs="0" name="IdentificationTypes" nillable="true" type="tns:ArrayOfIdentificationType" />
+          <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfMessage" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Plugins" nillable="true" type="tns:ArrayOfPlugin" />
+          <xs:element minOccurs="0" name="Port" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductCategories" nillable="true" type="tns:ArrayOfProductCategory" />
+          <xs:element minOccurs="0" name="SecurityImageGroups" nillable="true" type="tns:ArrayOfSecurityImageGroup" />
+          <xs:element minOccurs="0" name="SecurityQuestionGroups" nillable="true" type="tns:ArrayOfSecurityQuestionGroup" />
+          <xs:element minOccurs="0" name="SiteCities" nillable="true" type="tns:ArrayOfSiteCity" />
+          <xs:element minOccurs="0" name="SiteCountries" nillable="true" type="tns:ArrayOfSiteCountry" />
+          <xs:element minOccurs="0" name="SiteHolders" nillable="true" type="tns:ArrayOfSiteHolder" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+          <xs:element minOccurs="0" name="SiteOperationGroups" nillable="true" type="tns:ArrayOfSiteOperationGroup" />
+          <xs:element minOccurs="0" name="SiteSettings" nillable="true" type="tns:ArrayOfSiteSetting" />
+          <xs:element minOccurs="0" name="SiteStates" nillable="true" type="tns:ArrayOfSiteState" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserStates" nillable="true" type="tns:ArrayOfUserState" />
+          <xs:element minOccurs="0" name="Users" nillable="true" type="tns:ArrayOfUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Site" nillable="true" type="tns:Site" />
+  <xs:complexType name="App">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q9:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AppId" type="xs:int" />
+          <xs:element minOccurs="0" name="AppSettings" nillable="true" type="tns:ArrayOfAppSetting" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperationGroups" nillable="true" type="tns:ArrayOfOperationGroup" />
+          <xs:element minOccurs="0" name="Scheme" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sites" nillable="true" type="tns:ArrayOfSite" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="App" nillable="true" type="tns:App" />
+  <xs:complexType name="ArrayOfAppSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppSetting" nillable="true" type="tns:AppSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAppSetting" nillable="true" type="tns:ArrayOfAppSetting" />
+  <xs:complexType name="AppSetting">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q10:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="App" nillable="true" type="tns:App" />
+          <xs:element minOccurs="0" name="AppId" type="xs:int" />
+          <xs:element minOccurs="0" name="AppSettingId" type="xs:int" />
+          <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValidationRegExp" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AppSetting" nillable="true" type="tns:AppSetting" />
+  <xs:complexType name="ArrayOfOperationGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OperationGroup" nillable="true" type="tns:OperationGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperationGroup" nillable="true" type="tns:ArrayOfOperationGroup" />
+  <xs:complexType name="OperationGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q11:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="App" nillable="true" type="tns:App" />
+          <xs:element minOccurs="0" name="AppId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperationGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="OperationTypes" nillable="true" type="tns:ArrayOfOperationType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationGroup" nillable="true" type="tns:OperationGroup" />
+  <xs:complexType name="ArrayOfOperationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OperationType" nillable="true" type="tns:OperationType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperationType" nillable="true" type="tns:ArrayOfOperationType" />
+  <xs:complexType name="OperationType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q12:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperationGroup" nillable="true" type="tns:OperationGroup" />
+          <xs:element minOccurs="0" name="OperationGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="OperationTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="Operations" nillable="true" type="tns:ArrayOfOperation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OperationType" nillable="true" type="tns:OperationType" />
+  <xs:complexType name="ArrayOfOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Operation" nillable="true" type="tns:Operation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperation" nillable="true" type="tns:ArrayOfOperation" />
+  <xs:complexType name="Operation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q13:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Actions" nillable="true" type="tns:ArrayOfAction" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperationId" type="xs:int" />
+          <xs:element minOccurs="0" name="OperationType" nillable="true" type="tns:OperationType" />
+          <xs:element minOccurs="0" name="OperationTypeId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Operation" nillable="true" type="tns:Operation" />
+  <xs:complexType name="ArrayOfAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Action" nillable="true" type="tns:Action" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAction" nillable="true" type="tns:ArrayOfAction" />
+  <xs:complexType name="Action">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q14:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Operation" nillable="true" type="tns:Operation" />
+          <xs:element minOccurs="0" name="OperationId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Action" nillable="true" type="tns:Action" />
+  <xs:complexType name="ArrayOfSite">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Site" nillable="true" type="tns:Site" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSite" nillable="true" type="tns:ArrayOfSite" />
+  <xs:complexType name="ArrayOfBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Branch" nillable="true" type="tns:Branch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBranch" nillable="true" type="tns:ArrayOfBranch" />
+  <xs:complexType name="Branch">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q15:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BranchId" type="xs:int" />
+          <xs:element minOccurs="0" name="EMail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Branch" nillable="true" type="tns:Branch" />
+  <xs:complexType name="Company">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q16:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Attributes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="tns:City" />
+          <xs:element minOccurs="0" name="CityId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
+          <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Identification" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sites" nillable="true" type="tns:ArrayOfSite" />
+          <xs:element minOccurs="0" name="StateId" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Company" nillable="true" type="tns:Company" />
+  <xs:complexType name="City">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q17:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CityId" type="xs:int" />
+          <xs:element minOccurs="0" name="Companies" nillable="true" type="tns:ArrayOfCompany" />
+          <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+          <xs:element minOccurs="0" name="Holders" nillable="true" type="tns:ArrayOfHolder" />
+          <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="State" nillable="true" type="tns:State" />
+          <xs:element minOccurs="0" name="StateId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="City" nillable="true" type="tns:City" />
+  <xs:complexType name="ArrayOfCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true" type="tns:Company" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompany" nillable="true" type="tns:ArrayOfCompany" />
+  <xs:complexType name="ArrayOfHolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Holder" nillable="true" type="tns:Holder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHolder" nillable="true" type="tns:ArrayOfHolder" />
+  <xs:complexType name="Holder">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q18:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Attributes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="tns:City" />
+          <xs:element minOccurs="0" name="CityId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountryId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="HolderId" type="xs:int" />
+          <xs:element minOccurs="0" name="Identification" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SiteHolders" nillable="true" type="tns:ArrayOfSiteHolder" />
+          <xs:element minOccurs="0" name="StateId" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Holder" nillable="true" type="tns:Holder" />
+  <xs:complexType name="ArrayOfSiteHolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteHolder" nillable="true" type="tns:SiteHolder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteHolder" nillable="true" type="tns:ArrayOfSiteHolder" />
+  <xs:complexType name="SiteHolder">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q19:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Attributes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Holder" nillable="true" type="tns:Holder" />
+          <xs:element minOccurs="0" name="HolderId" type="xs:int" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteHolderId" type="xs:int" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SiteHolder" nillable="true" type="tns:SiteHolder" />
+  <xs:complexType name="State">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q20:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cities" nillable="true" type="tns:ArrayOfCity" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="tns:Country" />
+          <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+          <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StateId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="State" nillable="true" type="tns:State" />
+  <xs:complexType name="ArrayOfCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="City" nillable="true" type="tns:City" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCity" nillable="true" type="tns:ArrayOfCity" />
+  <xs:complexType name="Country">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q21:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+          <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="States" nillable="true" type="tns:ArrayOfState" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Country" nillable="true" type="tns:Country" />
+  <xs:complexType name="ArrayOfState">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="State" nillable="true" type="tns:State" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfState" nillable="true" type="tns:ArrayOfState" />
+  <xs:complexType name="ArrayOfCustomerType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerType" nillable="true" type="tns:CustomerType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerType" nillable="true" type="tns:ArrayOfCustomerType" />
+  <xs:complexType name="CustomerType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q22:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="Customers" nillable="true" type="tns:ArrayOfCustomer" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerType" nillable="true" type="tns:CustomerType" />
+  <xs:complexType name="ArrayOfCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="tns:Customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomer" nillable="true" type="tns:ArrayOfCustomer" />
+  <xs:complexType name="Customer">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q23:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalAttributes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConfirmEMail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerAmounts" nillable="true" type="tns:ArrayOfCustomerAmount" />
+          <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomerType" nillable="true" type="tns:CustomerType" />
+          <xs:element minOccurs="0" name="CustomerTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="EMail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HomeAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HomeAddressCityId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="HomeAddressCountryId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="HomeAddressStateId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="HomePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Identification" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdentificationType" nillable="true" type="tns:IdentificationType" />
+          <xs:element minOccurs="0" name="IdentificationTypeId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Mailing" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Mobile1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Mobile2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProduct" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+          <xs:element minOccurs="0" name="Sms" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TrxProducts" nillable="true" type="tns:ArrayOfTrxProduct" />
+          <xs:element minOccurs="0" name="TrxRecords" nillable="true" type="tns:ArrayOfTrxRecord" />
+          <xs:element minOccurs="0" name="Users" nillable="true" type="tns:ArrayOfUser" />
+          <xs:element minOccurs="0" name="WorkAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkAddressCityId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkAddressCountryId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkAddressStateId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkEMail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkPhone" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:complexType name="ArrayOfCustomerAmount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerAmount" nillable="true" type="tns:CustomerAmount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerAmount" nillable="true" type="tns:ArrayOfCustomerAmount" />
+  <xs:complexType name="CustomerAmount">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q24:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
+          <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+          <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MaxDailyAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MaxDailyAmountTemp" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MaxDailyOperations" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxDailyOperationsTemp" type="xs:int" />
+          <xs:element minOccurs="0" name="TrxType" nillable="true" type="tns:TrxType" />
+          <xs:element minOccurs="0" name="TrxTypeId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerAmount" nillable="true" type="tns:CustomerAmount" />
+  <xs:complexType name="TrxType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q25:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Channel" nillable="true" type="tns:Channel" />
+          <xs:element minOccurs="0" name="ChannelId" type="xs:int" />
+          <xs:element minOccurs="0" name="Configurable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CustomerAmounts" nillable="true" type="tns:ArrayOfCustomerAmount" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaxDailyAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MaxDailyOperations" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrxRecords" nillable="true" type="tns:ArrayOfTrxRecord" />
+          <xs:element minOccurs="0" name="TrxTypeId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrxType" nillable="true" type="tns:TrxType" />
+  <xs:complexType name="Channel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q26:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelId" type="xs:int" />
+          <xs:element minOccurs="0" name="CodeChannel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrxTypes" nillable="true" type="tns:ArrayOfTrxType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Channel" nillable="true" type="tns:Channel" />
+  <xs:complexType name="ArrayOfTrxType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrxType" nillable="true" type="tns:TrxType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrxType" nillable="true" type="tns:ArrayOfTrxType" />
+  <xs:complexType name="ArrayOfTrxRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrxRecord" nillable="true" type="tns:TrxRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrxRecord" nillable="true" type="tns:ArrayOfTrxRecord" />
+  <xs:complexType name="TrxRecord">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q27:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="AuthorizationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CoreReference" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CoreResponseCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CoreTransactionInternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
+          <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+          <xs:element minOccurs="0" name="DateTrx" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DestinationAccountNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DestinationAccountType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DestinationFinacialInstitutionInternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DestinationFullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DestinationIdentificationNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DestinationIdentificationType" type="xs:int" />
+          <xs:element minOccurs="0" name="FinacialInstitutionInternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FinancialInstitution" nillable="true" type="tns:FinancialInstitution" />
+          <xs:element minOccurs="0" name="FinancialInstitutionId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductGroup" nillable="true" type="tns:ProductGroup" />
+          <xs:element minOccurs="0" name="ProductGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductGroupInternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceAccountNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceQuotasNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="TrxRecordId" type="xs:long" />
+          <xs:element minOccurs="0" name="TrxStateId" type="xs:int" />
+          <xs:element minOccurs="0" name="TrxType" nillable="true" type="tns:TrxType" />
+          <xs:element minOccurs="0" name="TrxTypeId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrxRecord" nillable="true" type="tns:TrxRecord" />
+  <xs:complexType name="FinancialInstitution">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q28:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ABACode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ACHCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BankCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FinancialInstitutionId" type="xs:int" />
+          <xs:element minOccurs="0" name="IBANCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Identification" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+          <xs:element minOccurs="0" name="SwiftCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrxProducts" nillable="true" type="tns:ArrayOfTrxProduct" />
+          <xs:element minOccurs="0" name="TrxRecords" nillable="true" type="tns:ArrayOfTrxRecord" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FinancialInstitution" nillable="true" type="tns:FinancialInstitution" />
+  <xs:complexType name="ArrayOfTrxProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrxProduct" nillable="true" type="tns:TrxProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrxProduct" nillable="true" type="tns:ArrayOfTrxProduct" />
+  <xs:complexType name="TrxProduct">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q29:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
+          <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+          <xs:element minOccurs="0" name="FinancialInstitution" nillable="true" type="tns:FinancialInstitution" />
+          <xs:element minOccurs="0" name="FinancialInstitutionId" type="xs:int" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OwnerIdentification" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OwnerTypeIdentification" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegisterDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TrxProductId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrxProduct" nillable="true" type="tns:TrxProduct" />
+  <xs:complexType name="ProductGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q30:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FixedParameterShowInSummary" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FixedParameterTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FixedParameterValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FullPayment" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HasMovement" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HasResumeFile" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsPayment" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsTrxSource" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsTrxTarget" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MinPayment" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MovementFields" nillable="true" type="tns:ArrayOfMovementField" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartialPayment" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ProductAlias" nillable="true" type="tns:ArrayOfProductAlia" />
+          <xs:element minOccurs="0" name="ProductCategory" nillable="true" type="tns:ProductCategory" />
+          <xs:element minOccurs="0" name="ProductCategoryId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductGroupFields" nillable="true" type="tns:ArrayOfProductGroupField" />
+          <xs:element minOccurs="0" name="ProductGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductGroupSources" nillable="true" type="tns:ArrayOfPaymentSource" />
+          <xs:element minOccurs="0" name="ProductGroupStates" nillable="true" type="tns:ArrayOfProductGroupState" />
+          <xs:element minOccurs="0" name="ProductGroups" nillable="true" type="tns:ArrayOfPaymentSource" />
+          <xs:element minOccurs="0" name="ProductTypes" nillable="true" type="tns:ArrayOfProductType" />
+          <xs:element minOccurs="0" name="SystemSourceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TrxRecords" nillable="true" type="tns:ArrayOfTrxRecord" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductGroup" nillable="true" type="tns:ProductGroup" />
+  <xs:complexType name="ArrayOfMovementField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MovementField" nillable="true" type="tns:MovementField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMovementField" nillable="true" type="tns:ArrayOfMovementField" />
+  <xs:complexType name="MovementField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q31:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Align" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AllowNull" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ColAlign" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColHeader" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataStoredType" nillable="true" type="tns:DataStoredType" />
+          <xs:element minOccurs="0" name="DataStoredTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="DecimalPrecision" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayMask" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayNullValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FillCharacter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsKey" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Length" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ListSeparator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaskedCharacter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaskedLength" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MovementFieldId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NullValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductGroup" nillable="true" type="tns:ProductGroup" />
+          <xs:element minOccurs="0" name="ProductGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="ShowInDetail" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SortOrderDetail" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Start" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ValidationRegExp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValueTextListSeparator" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MovementField" nillable="true" type="tns:MovementField" />
+  <xs:complexType name="DataStoredType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q32="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q32:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataStoredTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="MovementFields" nillable="true" type="tns:ArrayOfMovementField" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductGroupFields" nillable="true" type="tns:ArrayOfProductGroupField" />
+          <xs:element minOccurs="0" name="ProductTypeFields" nillable="true" type="tns:ArrayOfProductTypeField" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataStoredType" nillable="true" type="tns:DataStoredType" />
+  <xs:complexType name="ArrayOfProductGroupField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductGroupField" nillable="true" type="tns:ProductGroupField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductGroupField" nillable="true" type="tns:ArrayOfProductGroupField" />
+  <xs:complexType name="ProductGroupField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q33:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Align" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AllowNull" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ColAlign" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColHeader" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataStoredType" nillable="true" type="tns:DataStoredType" />
+          <xs:element minOccurs="0" name="DataStoredTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="DecimalPrecision" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayMask" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayNullValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FillCharacter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsKey" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Length" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ListSeparator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaskedCharacter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaskedLength" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NullValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductFields" nillable="true" type="tns:ArrayOfProductField" />
+          <xs:element minOccurs="0" name="ProductGroup" nillable="true" type="tns:ProductGroup" />
+          <xs:element minOccurs="0" name="ProductGroupFieldId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="ShowInDetail" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ShowInSummary" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SortOrderDetail" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SortOrderSummary" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Start" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ValidationRegExp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValueTextListSeparator" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductGroupField" nillable="true" type="tns:ProductGroupField" />
+  <xs:complexType name="ArrayOfProductField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductField" nillable="true" type="tns:ProductField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductField" nillable="true" type="tns:ArrayOfProductField" />
+  <xs:complexType name="ProductField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q34="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q34:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OriginalValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PipelineText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+          <xs:element minOccurs="0" name="ProductFieldGuid" type="ser:guid" />
+          <xs:element minOccurs="0" name="ProductGroupField" nillable="true" type="tns:ProductGroupField" />
+          <xs:element minOccurs="0" name="ProductGroupFieldId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductGuid" type="ser:guid" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductField" nillable="true" type="tns:ProductField" />
+  <xs:complexType name="Product">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q35="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q35:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
+          <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InternalCode2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductFields" nillable="true" type="tns:ArrayOfProductField" />
+          <xs:element minOccurs="0" name="ProductGroupStateId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductGuid" type="ser:guid" />
+          <xs:element minOccurs="0" name="ProductNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductType" nillable="true" type="tns:ProductType" />
+          <xs:element minOccurs="0" name="ProductTypeId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ProductType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q36="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q36:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductGroup" nillable="true" type="tns:ProductGroup" />
+          <xs:element minOccurs="0" name="ProductGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductTypeFields" nillable="true" type="tns:ArrayOfProductTypeField" />
+          <xs:element minOccurs="0" name="ProductTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProduct" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductType" nillable="true" type="tns:ProductType" />
+  <xs:complexType name="ArrayOfProductTypeField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductTypeField" nillable="true" type="tns:ProductTypeField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductTypeField" nillable="true" type="tns:ArrayOfProductTypeField" />
+  <xs:complexType name="ProductTypeField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q37="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q37:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Align" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AllowNull" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ColAlign" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ColHeader" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataStoredType" nillable="true" type="tns:DataStoredType" />
+          <xs:element minOccurs="0" name="DataStoredTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="DecimalPrecision" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DefaultValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayMask" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayNullValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FillCharacter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsKey" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Length" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ListSeparator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaskedCharacter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaskedLength" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NullValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProducTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductType" nillable="true" type="tns:ProductType" />
+          <xs:element minOccurs="0" name="ProductTypeFieldId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductTypeFieldLists" nillable="true" type="tns:ArrayOfProductTypeFieldList" />
+          <xs:element minOccurs="0" name="ShowInDetail" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ShowInSummary" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Start" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ValidationRegExp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValueTextListSeparator" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductTypeField" nillable="true" type="tns:ProductTypeField" />
+  <xs:complexType name="ArrayOfProductTypeFieldList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductTypeFieldList" nillable="true" type="tns:ProductTypeFieldList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductTypeFieldList" nillable="true" type="tns:ArrayOfProductTypeFieldList" />
+  <xs:complexType name="ProductTypeFieldList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q38="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q38:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItemText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ItemValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductGroupFieldListId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductTypeField" nillable="true" type="tns:ProductTypeField" />
+          <xs:element minOccurs="0" name="ProductTypeFieldId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductTypeFieldList" nillable="true" type="tns:ProductTypeFieldList" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="ArrayOfProductAlia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductAlia" nillable="true" type="tns:ProductAlia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductAlia" nillable="true" type="tns:ArrayOfProductAlia" />
+  <xs:complexType name="ProductAlia">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q39="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q39:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductAliasId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductGroup" nillable="true" type="tns:ProductGroup" />
+          <xs:element minOccurs="0" name="ProductGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductAlia" nillable="true" type="tns:ProductAlia" />
+  <xs:complexType name="User">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q40="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q40:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessCount" type="xs:int" />
+          <xs:element minOccurs="0" name="Attributes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BlockPasswordDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="BlockVerificationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BlockVerificationCodeExpired" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
+          <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+          <xs:element minOccurs="0" name="DaysChangePassword" type="xs:int" />
+          <xs:element minOccurs="0" name="LastLoginDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastPasswordChangeDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastSecondPasswordChangeDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastUserStateId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PassPhrase" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PasswordHistories" nillable="true" type="tns:ArrayOfPasswordHistory" />
+          <xs:element minOccurs="0" name="PasswordHistory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductAlias" nillable="true" type="tns:ArrayOfProductAlia" />
+          <xs:element minOccurs="0" name="Salt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SecondPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SecondPasswordActive" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SecondPasswordSalt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SecondPasswordTryAccessCount" type="xs:int" />
+          <xs:element minOccurs="0" name="SecureDevices" nillable="true" type="tns:ArrayOfSecureDevice" />
+          <xs:element minOccurs="0" name="SecurityImage" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+          <xs:element minOccurs="0" name="TryAccessCount" type="xs:int" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserRoles" nillable="true" type="tns:ArrayOfUserRole" />
+          <xs:element minOccurs="0" name="UserSecurityQuestions" nillable="true" type="tns:ArrayOfUserSecurityQuestion" />
+          <xs:element minOccurs="0" name="UserState" nillable="true" type="tns:UserState" />
+          <xs:element minOccurs="0" name="UserStateId" type="xs:int" />
+          <xs:element minOccurs="0" name="VerificationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VerificationCodeExpired" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="WorkFlowInstances" nillable="true" type="tns:ArrayOfWorkFlowInstance" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfPasswordHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PasswordHistory" nillable="true" type="tns:PasswordHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPasswordHistory" nillable="true" type="tns:ArrayOfPasswordHistory" />
+  <xs:complexType name="PasswordHistory">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q41="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q41:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PasswordHistoryId" type="xs:int" />
+          <xs:element minOccurs="0" name="Salt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PasswordHistory" nillable="true" type="tns:PasswordHistory" />
+  <xs:complexType name="ArrayOfSecureDevice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecureDevice" nillable="true" type="tns:SecureDevice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecureDevice" nillable="true" type="tns:ArrayOfSecureDevice" />
+  <xs:complexType name="SecureDevice">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q42="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q42:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceIdentifier" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SecureDeviceId" type="xs:int" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecureDevice" nillable="true" type="tns:SecureDevice" />
+  <xs:complexType name="ArrayOfUserRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserRole" nillable="true" type="tns:UserRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserRole" nillable="true" type="tns:ArrayOfUserRole" />
+  <xs:complexType name="UserRole">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q43="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q43:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Role" nillable="true" type="tns:Role" />
+          <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserRoleId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserRole" nillable="true" type="tns:UserRole" />
+  <xs:complexType name="Role">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q44="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q44:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserRoles" nillable="true" type="tns:ArrayOfUserRole" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Role" nillable="true" type="tns:Role" />
+  <xs:complexType name="ArrayOfUserSecurityQuestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserSecurityQuestion" nillable="true" type="tns:UserSecurityQuestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserSecurityQuestion" nillable="true" type="tns:ArrayOfUserSecurityQuestion" />
+  <xs:complexType name="UserSecurityQuestion">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q45="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q45:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Answer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QuestionText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserSecurityQuestionId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserSecurityQuestion" nillable="true" type="tns:UserSecurityQuestion" />
+  <xs:complexType name="UserState">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q46="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q46:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserStateId" type="xs:int" />
+          <xs:element minOccurs="0" name="Users" nillable="true" type="tns:ArrayOfUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserState" nillable="true" type="tns:UserState" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="ArrayOfWorkFlowInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkFlowInstance" nillable="true" type="tns:WorkFlowInstance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkFlowInstance" nillable="true" type="tns:ArrayOfWorkFlowInstance" />
+  <xs:complexType name="WorkFlowInstance">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q47="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q47:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TaskInstances" nillable="true" type="tns:ArrayOfTaskInstance" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkFlow" nillable="true" type="tns:WorkFlow" />
+          <xs:element minOccurs="0" name="WorkFlowId" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkFlowInstanceId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkFlowInstance" nillable="true" type="tns:WorkFlowInstance" />
+  <xs:complexType name="ArrayOfTaskInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskInstance" nillable="true" type="tns:TaskInstance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskInstance" nillable="true" type="tns:ArrayOfTaskInstance" />
+  <xs:complexType name="TaskInstance">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q48="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q48:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="InputData" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OutputData" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Task" nillable="true" type="tns:Task" />
+          <xs:element minOccurs="0" name="TaskId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TaskInstanceId" type="xs:int" />
+          <xs:element minOccurs="0" name="TaskState" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkFlowInstance" nillable="true" type="tns:WorkFlowInstance" />
+          <xs:element minOccurs="0" name="WorkFlowInstanceId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaskInstance" nillable="true" type="tns:TaskInstance" />
+  <xs:complexType name="Task">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q49="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q49:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Attributes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SortOrder" type="xs:int" />
+          <xs:element minOccurs="0" name="TaskId" type="xs:int" />
+          <xs:element minOccurs="0" name="TaskInstances" nillable="true" type="tns:ArrayOfTaskInstance" />
+          <xs:element minOccurs="0" name="View" nillable="true" type="tns:View" />
+          <xs:element minOccurs="0" name="ViewId" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkFlow" nillable="true" type="tns:WorkFlow" />
+          <xs:element minOccurs="0" name="WorkFlowId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Task" nillable="true" type="tns:Task" />
+  <xs:complexType name="WorkFlow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q50="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q50:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SiteOperation" nillable="true" type="tns:SiteOperation" />
+          <xs:element minOccurs="0" name="SiteOperationId" type="xs:int" />
+          <xs:element minOccurs="0" name="Tasks" nillable="true" type="tns:ArrayOfTask" />
+          <xs:element minOccurs="0" name="WorkFlowId" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkFlowInstances" nillable="true" type="tns:ArrayOfWorkFlowInstance" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkFlow" nillable="true" type="tns:WorkFlow" />
+  <xs:complexType name="ArrayOfTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Task" nillable="true" type="tns:Task" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTask" nillable="true" type="tns:ArrayOfTask" />
+  <xs:complexType name="ProductCategory">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q51="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q51:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductCategoryId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductGroups" nillable="true" type="tns:ArrayOfProductGroup" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductCategory" nillable="true" type="tns:ProductCategory" />
+  <xs:complexType name="ArrayOfProductGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductGroup" nillable="true" type="tns:ProductGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductGroup" nillable="true" type="tns:ArrayOfProductGroup" />
+  <xs:complexType name="ArrayOfPaymentSource">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentSource" nillable="true" type="tns:PaymentSource" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaymentSource" nillable="true" type="tns:ArrayOfPaymentSource" />
+  <xs:complexType name="PaymentSource">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q52="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q52:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PaymentSourceId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductGroup" nillable="true" type="tns:ProductGroup" />
+          <xs:element minOccurs="0" name="ProductGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductGroupIdSource" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductGroupSource" nillable="true" type="tns:ProductGroup" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentSource" nillable="true" type="tns:PaymentSource" />
+  <xs:complexType name="ArrayOfProductGroupState">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductGroupState" nillable="true" type="tns:ProductGroupState" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductGroupState" nillable="true" type="tns:ArrayOfProductGroupState" />
+  <xs:complexType name="ProductGroupState">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q53="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q53:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductGroup" nillable="true" type="tns:ProductGroup" />
+          <xs:element minOccurs="0" name="ProductGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductGroupStateId" type="xs:int" />
+          <xs:element minOccurs="0" name="ShowInSummary" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductGroupState" nillable="true" type="tns:ProductGroupState" />
+  <xs:complexType name="ArrayOfProductType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductType" nillable="true" type="tns:ProductType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductType" nillable="true" type="tns:ArrayOfProductType" />
+  <xs:complexType name="IdentificationType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q54="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q54:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Customers" nillable="true" type="tns:ArrayOfCustomer" />
+          <xs:element minOccurs="0" name="IdentificationTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IdentificationType" nillable="true" type="tns:IdentificationType" />
+  <xs:complexType name="ArrayOfDataStoredType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataStoredType" nillable="true" type="tns:DataStoredType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataStoredType" nillable="true" type="tns:ArrayOfDataStoredType" />
+  <xs:complexType name="ArrayOfFinancialInstitution">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FinancialInstitution" nillable="true" type="tns:FinancialInstitution" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFinancialInstitution" nillable="true" type="tns:ArrayOfFinancialInstitution" />
+  <xs:complexType name="ArrayOfIdentificationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IdentificationType" nillable="true" type="tns:IdentificationType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIdentificationType" nillable="true" type="tns:ArrayOfIdentificationType" />
+  <xs:complexType name="ArrayOfMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMessage" nillable="true" type="tns:ArrayOfMessage" />
+  <xs:complexType name="Message">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q55="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q55:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayError" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FriendlyDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MessageId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Message" nillable="true" type="tns:Message" />
+  <xs:complexType name="ArrayOfPlugin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Plugin" nillable="true" type="tns:Plugin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlugin" nillable="true" type="tns:ArrayOfPlugin" />
+  <xs:complexType name="Plugin">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q56="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q56:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClassType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Plugin" nillable="true" type="tns:Plugin" />
+  <xs:complexType name="ArrayOfProductCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductCategory" nillable="true" type="tns:ProductCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductCategory" nillable="true" type="tns:ArrayOfProductCategory" />
+  <xs:complexType name="ArrayOfSecurityImageGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecurityImageGroup" nillable="true" type="tns:SecurityImageGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecurityImageGroup" nillable="true" type="tns:ArrayOfSecurityImageGroup" />
+  <xs:complexType name="SecurityImageGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q57="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q57:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SecurityImageGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="SecurityImages" nillable="true" type="tns:ArrayOfSecurityImage" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecurityImageGroup" nillable="true" type="tns:SecurityImageGroup" />
+  <xs:complexType name="ArrayOfSecurityImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecurityImage" nillable="true" type="tns:SecurityImage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecurityImage" nillable="true" type="tns:ArrayOfSecurityImage" />
+  <xs:complexType name="SecurityImage">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q58="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q58:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="MimeType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SecurityImageGroup" nillable="true" type="tns:SecurityImageGroup" />
+          <xs:element minOccurs="0" name="SecurityImageGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="SecurityImageId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecurityImage" nillable="true" type="tns:SecurityImage" />
+  <xs:complexType name="ArrayOfSecurityQuestionGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecurityQuestionGroup" nillable="true" type="tns:SecurityQuestionGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecurityQuestionGroup" nillable="true" type="tns:ArrayOfSecurityQuestionGroup" />
+  <xs:complexType name="SecurityQuestionGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q59="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q59:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SecurityQuestionGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="SecurityQuestions" nillable="true" type="tns:ArrayOfSecurityQuestion" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecurityQuestionGroup" nillable="true" type="tns:SecurityQuestionGroup" />
+  <xs:complexType name="ArrayOfSecurityQuestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecurityQuestion" nillable="true" type="tns:SecurityQuestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecurityQuestion" nillable="true" type="tns:ArrayOfSecurityQuestion" />
+  <xs:complexType name="SecurityQuestion">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q60="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q60:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="QuestionText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SecurityQuestionGroup" nillable="true" type="tns:SecurityQuestionGroup" />
+          <xs:element minOccurs="0" name="SecurityQuestionGroupId" type="xs:int" />
+          <xs:element minOccurs="0" name="SecurityQuestionId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecurityQuestion" nillable="true" type="tns:SecurityQuestion" />
+  <xs:complexType name="ArrayOfSiteCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteCity" nillable="true" type="tns:SiteCity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteCity" nillable="true" type="tns:ArrayOfSiteCity" />
+  <xs:complexType name="SiteCity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q61="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q61:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CityId" type="xs:int" />
+          <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+          <xs:element minOccurs="0" name="SiteState" nillable="true" type="tns:SiteState" />
+          <xs:element minOccurs="0" name="StateId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SiteCity" nillable="true" type="tns:SiteCity" />
+  <xs:complexType name="SiteState">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q62="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q62:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteCities" nillable="true" type="tns:ArrayOfSiteCity" />
+          <xs:element minOccurs="0" name="SiteCountry" nillable="true" type="tns:SiteCountry" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+          <xs:element minOccurs="0" name="StateId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SiteState" nillable="true" type="tns:SiteState" />
+  <xs:complexType name="SiteCountry">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q63="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q63:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+          <xs:element minOccurs="0" name="InternalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+          <xs:element minOccurs="0" name="SiteStates" nillable="true" type="tns:ArrayOfSiteState" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SiteCountry" nillable="true" type="tns:SiteCountry" />
+  <xs:complexType name="ArrayOfSiteState">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteState" nillable="true" type="tns:SiteState" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteState" nillable="true" type="tns:ArrayOfSiteState" />
+  <xs:complexType name="ArrayOfSiteCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteCountry" nillable="true" type="tns:SiteCountry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteCountry" nillable="true" type="tns:ArrayOfSiteCountry" />
+  <xs:complexType name="ArrayOfSiteOperationGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteOperationGroup" nillable="true" type="tns:SiteOperationGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteOperationGroup" nillable="true" type="tns:ArrayOfSiteOperationGroup" />
+  <xs:complexType name="ArrayOfSiteSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteSetting" nillable="true" type="tns:SiteSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteSetting" nillable="true" type="tns:ArrayOfSiteSetting" />
+  <xs:complexType name="SiteSetting">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q64="http://schemas.datacontract.org/2004/07/Intercom.Core.Repository" base="q64:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Site" nillable="true" type="tns:Site" />
+          <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+          <xs:element minOccurs="0" name="SiteSettingId" type="xs:int" />
+          <xs:element minOccurs="0" name="ValidationRegExp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SiteSetting" nillable="true" type="tns:SiteSetting" />
+  <xs:complexType name="ArrayOfUserState">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserState" nillable="true" type="tns:UserState" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserState" nillable="true" type="tns:ArrayOfUserState" />
+  <xs:complexType name="ArrayOfSiteOperationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteOperationType" nillable="true" type="tns:SiteOperationType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteOperationType" nillable="true" type="tns:ArrayOfSiteOperationType" />
+  <xs:complexType name="ArrayOfSiteOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteOperation" nillable="true" type="tns:SiteOperation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteOperation" nillable="true" type="tns:ArrayOfSiteOperation" />
+  <xs:complexType name="ArrayOfWorkFlow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkFlow" nillable="true" type="tns:WorkFlow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkFlow" nillable="true" type="tns:ArrayOfWorkFlow" />
+  <xs:complexType name="ArrayOfView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="View" nillable="true" type="tns:View" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfView" nillable="true" type="tns:ArrayOfView" />
+</xs:schema>
